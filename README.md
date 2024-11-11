@@ -1,40 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# CryptoFund - Bitcoin & ICP Crowdfunding Platform
+
+A decentralized crowdfunding platform that leverages Bitcoin integration using Chain Fusion on the Internet Computer Protocol (ICP).
+
+## Features
+
+- Create and manage crowdfunding projects
+- Accept Bitcoin donations through ICP integration
+- Secure transaction verification using Chain Fusion
+- Real-time project status and funding updates
+- Responsive UI with dark/light mode support
+
+## Technology Stack
+
+- Frontend: Next.js, React, Tailwind CSS, shadcn/ui
+- Backend: Internet Computer Protocol (ICP)
+- Bitcoin Integration: Chain Fusion
+- Authentication: Internet Identity
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Copy `.env.example` to `.env.local` and update the values
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Deployment
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Deploy the ICP canisters:
+   ```bash
+   dfx deploy
+   ```
+2. Update the environment variables with your canister IDs
+3. Deploy the frontend:
+   ```bash
+   npm run build
+   dfx deploy frontend
+   ```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Architecture
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+The platform uses Chain Fusion to integrate Bitcoin with ICP:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+1. Project Creation:
+   - Projects are stored in ICP canisters
+   - Each project gets a unique Bitcoin address through ECDSA signing
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Donation Flow:
+   - Users send BTC to project-specific addresses
+   - ICP verifies transactions using Chain Fusion
+   - Smart contracts update project funding status
 
-## Learn More
+3. Security:
+   - Threshold ECDSA for Bitcoin address generation
+   - Secure transaction verification
+   - Automated fund distribution
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+MIT License - see LICENSE file for details
