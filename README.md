@@ -1,66 +1,115 @@
-# CryptoFund - Bitcoin & ICP Crowdfunding Platform
+# Bitchanga - Decentralized crowdfunding platform  
 
-A decentralized crowdfunding platform that leverages Bitcoin integration using Chain Fusion on the Internet Computer Protocol (ICP).
+Tired of traditional crowdfunding platforms with their high fees and lack of transparency? Meet Bitchanga - where builders and investors connect directly through the power of blockchain. We're leveraging ckBTC on the Internet Computer Protocol to make project funding faster, safer, and more transparent than ever before.
 
-## Features
+# What makes us different
 
-- Create and manage crowdfunding projects
-- Accept Bitcoin donations through ICP integration
-- Secure transaction verification using Chain Fusion
-- Real-time project status and funding updates
-- Responsive UI with dark/light mode support
+Ever tried raising funds for your project only to get lost in a sea of paperwork and intermediaries? Or invested in a project only to wonder where your money really went? We get it. That's why we built Bitchanga with both builders and investors in mind.
 
-## Technology Stack
+---
 
-- Frontend: Next.js, React, Tailwind CSS, shadcn/ui
-- Backend: Internet Computer Protocol (ICP)
-- Bitcoin Integration: Chain Fusion
-- Authentication: Internet Identity
+## 🌟 Features  
 
-## Getting Started
+### For Builders  
+- **Global Exposure**: Present your project to a diverse network of investors worldwide.  
+- **Milestone-based Funding**: Funds are released only when predefined milestones are achieved.  
+- **Lower Fees**: Avoid the high costs of traditional financing options.  
 
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Copy `.env.example` to `.env.local` and update the values
-4. Start the development server:
-   ```bash
-   npm run dev
-   ```
+### For Investors  
+- **Safe Investments**: Contributions are secured in escrow until project milestones are met.  
+- **Investment Flexibility**: Withdraw funds if you lose confidence in a project.  
+- **Exclusive Rewards**: Earn NFTs based on your investment tier.  
+- **Support Innovation**: Help bring groundbreaking ideas to life while making an impact.  
 
-## Deployment
+### Powered by Technology  
+- **On-chain Transactions**: Built on the Internet Computer Protocol for speed and decentralization.  
+- **Off-chain Storage**: MongoDB Atlas is used for efficient storage of non-sensitive data.  
+- **Smart Contracts**: Automation ensures fair and trustless transactions.  
 
-1. Deploy the ICP canisters:
-   ```bash
-   dfx deploy
-   ```
-2. Update the environment variables with your canister IDs
-3. Deploy the frontend:
-   ```bash
-   npm run build
-   dfx deploy frontend
-   ```
+---
 
-## Architecture
+## 🚀 Getting Started  
 
-The platform uses Chain Fusion to integrate Bitcoin with ICP:
+Follow these simple steps to begin your journey on Bitchanga:  
 
-1. Project Creation:
-   - Projects are stored in ICP canisters
-   - Each project gets a unique Bitcoin address through ECDSA signing
+1. **Sign Up**  
+   - Register as a **Builder** or an **Investor**.  
 
-2. Donation Flow:
-   - Users send BTC to project-specific addresses
-   - ICP verifies transactions using Chain Fusion
-   - Smart contracts update project funding status
+2. **For Builders**  
+   - Submit your project details, including goals and milestones.  
+   - Showcase your project to attract potential investors.  
 
-3. Security:
-   - Threshold ECDSA for Bitcoin address generation
-   - Secure transaction verification
-   - Automated fund distribution
+3. **For Investors**  
+   - Browse projects and find those that align with your interests.  
+   - Invest ckBTC and receive tier-based NFT rewards.  
+   - Monitor project progress and milestones.  
 
-## License
+4. **Escrow System**  
+   - Funds are securely held in escrow until milestones are validated.  
+   - Builders can only access funds after meeting milestones.  
+   - Investors can withdraw contributions before milestones are met if needed.  
 
-MIT License - see LICENSE file for details
+---
+
+##  ⚒️ Local Setup 
+
+Clone the repo.
+- To launch the dev environment for the frontend
+
+```sh
+cd frontend
+npm install
+dfx start --background
+dfx deploy
+```
+
+- To deploy the canister on the local network
+
+```sh
+cd crowdfunding_canister
+dfx start --background 
+dfx deploy
+```
+
+---
+
+## 💡 Why ckBTC?  
+
+- **Fast and Reliable**: Instant settlements without intermediaries.  
+- **Decentralized**: Transactions are transparent and verifiable on the blockchain.  
+- **Global Reach**: Easily invest or fund projects across borders.  
+
+---
+
+## 🔐 Security and Transparency  
+
+Bitchanga ensures a secure and trustworthy crowdfunding environment:  
+- **Smart Contract Escrow**: Funds are released only when milestones are achieved.  
+- **NFT Rewards**: Recognizing investors' contributions with unique digital assets.  
+- **Transparent Operations**: All transactions and progress are recorded on the blockchain.  
+
+---
+
+- **Frontend Canister ID**: [z4gvt-waaaa-aaaam-qcagq-cai](https://z4gvt-waaaa-aaaam-qcagq-cai.icp0.io/)
+- **Backend Canister ID**: qncn4-nqaaa-aaaah-qpwsq-cai
+
+## 🌍 Transforming Crowdfunding  
+
+Bitchanga is redefining how projects are funded and supported globally. Join us and be part of a decentralized, transparent, and inclusive ecosystem.
+
+👉 **[MIT License](./LICENSE)**  
+
+---
+## Technical architecture
+
+![flowchart](./flowchart_with_rewards.jpeg)
+
+---
+
+**Built on:**  
+- **ckBTC** on the Internet Computer Protocol  
+- **MongoDB** for off-chain data storage  
+- **ICP canisters** for secure, automated fund management and on chain data storage. 
+
+**Built with ❤️ by the Bitchanga team**  
+

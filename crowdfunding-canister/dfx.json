@@ -1,0 +1,20 @@
+{
+  "canisters": {
+    "crowdfunding": {
+      "main": "src/crowdfunding/main.mo",
+      "type": "motoko"
+    },
+    "crowdfunding_test": {
+      "main": "src/crowdfunding_test/main.mo",
+      "type": "motoko"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": "mops sources"
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
